@@ -175,10 +175,6 @@ static mux_result_t GetDeviceInfos(uint32_t device_types,
   // iterate over the available device infos
   uint32_t num_infos_out = 0;
   for (auto &info : GetDeviceInfosArray()) {
-    // list ends with first non valid info entry
-    if (!info.is_valid()) {
-      break;
-    }
     // skip device types that were not requested
     if (0 == (info.device_type & device_types)) {
       continue;

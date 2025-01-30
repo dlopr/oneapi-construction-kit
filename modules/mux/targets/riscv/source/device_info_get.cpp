@@ -50,8 +50,7 @@ bool enumerate_device_infos() {
     }
 
     // update this device_info entry and continue
-    device_infos.emplace_back();
-    auto &dev_info = device_infos.back();
+    auto &dev_info = device_infos.emplace_back();
     dev_info.update_from_hal_info(hal_dev_info);
     dev_info.hal_device_index = i;
     // device info should be valid at this point
